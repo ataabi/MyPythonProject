@@ -1,0 +1,18 @@
+import requests
+from bs4 import BeautifulSoup
+
+URL = 'https://www.atacadao.com'
+
+headers = {"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                         '(KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36 Edg/86.0.622.51'}
+
+page = requests.get(URL, headers=headers)
+
+soup = BeautifulSoup(page.content, 'html.parser')
+
+tittle = soup.find()
+#convert_tittle = float(tittle[0:5])
+
+print(tittle)
+for c in tittle:
+    print(c)
